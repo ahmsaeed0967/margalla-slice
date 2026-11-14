@@ -1,6 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import BasketBar from "./BasketBar.jsx";
+import DemoControls from "./DemoControls.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { SITE } from "../config/site.js";
 
@@ -54,6 +55,7 @@ export default function Layout() {
         <p>
           <strong>{SITE.name}</strong> is a fictional restaurant. {SITE.demoLabel}. No personal data is stored or sent.
         </p>
+        <DemoControls />
       </footer>
     </>
   );

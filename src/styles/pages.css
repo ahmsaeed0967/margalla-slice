@@ -36,6 +36,37 @@
   font-weight: 600;
 }
 
+/* Demo controls (footer) */
+.demo-controls {
+  margin: var(--space-3) auto 0;
+  padding: var(--space-3);
+  border: 2px dashed var(--color-muted);
+  border-radius: var(--radius);
+  color: var(--color-text);
+}
+.demo-controls legend {
+  padding: 0 var(--space-2);
+  font-weight: 700;
+}
+.demo-controls .field {
+  margin-bottom: var(--space-1);
+}
+
+/* Long names and descriptions never push the page wider than the screen */
+.card__title,
+.card__desc,
+.basket-line__info,
+.notice {
+  overflow-wrap: anywhere;
+}
+.card__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Details page */
 .details {
   display: grid;
