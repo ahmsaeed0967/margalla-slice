@@ -1,6 +1,2 @@
 User-agent: *
-Disallow: /admin
-Disallow: /admin/*
 Allow: /
-
-Sitemap: https://tastopizza.com/sitemap.xml
