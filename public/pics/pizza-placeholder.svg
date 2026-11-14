@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#E6F5F6"/>
+  <circle cx="150" cy="100" r="70" fill="#F2C14E"/>
+  <circle cx="120" cy="80" r="8" fill="#D62839"/>
+  <circle cx="170" cy="70" r="8" fill="#D62839"/>
+  <circle cx="150" cy="120" r="8" fill="#D62839"/>
+  <circle cx="185" cy="110" r="8" fill="#4C9A2A"/>
+  <circle cx="115" cy="120" r="8" fill="#4C9A2A"/>
+  <text x="150" y="185" font-family="Inter, sans-serif" font-size="12" fill="#0E8A94" text-anchor="middle">Tasto Pizza</text>
+</svg>

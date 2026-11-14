@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Bottom bars (phone nav + "View basket") ----------
+   --nav-total : phone bottom nav height incl. safe area (0 on desktop, nav is hidden)
+   --basket-h  : "View basket" bar height, only while the basket has items
+   --bottom-bars: what the page must keep free at the bottom */
+:root {
+  /* Light design only: phone "force dark" modes must not repaint brand colours */
+  color-scheme: only light;
+  --nav-total: 0px;
+  --basket-pad: max(8px, env(safe-area-inset-bottom));
+  --basket-h: 0px;
+  --bottom-bars: calc(var(--nav-total) + var(--basket-h));
+}
+/* Bottom nav is shown below md (768px) — see BottomNav.jsx (md:hidden) */
+@media (max-width: 767.98px) {
+  :root {
+    --nav-total: calc(66px + env(safe-area-inset-bottom));
+    --basket-pad: 8px;
+  }
+}
+/* 8px top padding + 56px bar + bottom padding (see BasketBar.jsx) */
+:root[data-basket="on"] {
+  --basket-h: calc(64px + var(--basket-pad));
+}
+
+/* Sections stop just below the sticky header + category chips
+   (--menu-offset is measured in CategoryBar.jsx) */
+.menu-anchor,
+#menu,
+#deals,
+#about {
+  scroll-margin-top: var(--menu-offset, 140px);
+}
+
+/* Sideways scrolling is cut off on <html> only, and <body> uses `clip`.
+   (overflow-x: hidden on BOTH html and body turns body into its own scroll
+   box, which silently breaks `position: sticky` — the category bar.) */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: clip;
+}
+html,
+body {
+  max-width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure images don't exceed viewport */
+img {
+  max-width: 100%;
+  height: auto;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  /* No pulsing, sliding or zooming for people who turned animations off */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: theme('colors.cream.DEFAULT');
+  color: theme('colors.ink');
+  /* The footer (last element) reserves --bottom-bars itself, so the bottom
+     nav + basket bar never cover its last line */
+  font-family: 'Inter', sans-serif;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Keyboard focus: 3px brand-deep ring, white on night backgrounds */
+:focus-visible {
+  outline: 3px solid theme('colors.brand.deep');
+  outline-offset: 2px;
+}
+.bg-night:focus-visible,
+.bg-night :focus-visible {
+  outline-color: theme('colors.white');
+}
+
+/* Smooth Entrance */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .45s cubic-bezier(0.16, 1, 0.3, 1), transform .45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+.btn-scale {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn-scale:hover {
+  transform: scale(1.03);
+}
+.btn-scale:active {
+  transform: scale(.97);
+}
+
+.pulse-dot {
+  position: relative;
+}
+.pulse-dot::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: currentColor;
+  opacity: .35;
+  animation: pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0% { transform: scale(.6); opacity: .5; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+#cart-overlay {
+  transition: opacity .3s ease;
+}
+#cart-drawer {
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

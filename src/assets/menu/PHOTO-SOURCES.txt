@@ -1,0 +1,25 @@
+Menu photo sources (Nov 2026).
+Unsplash photos are under the Unsplash License (free for commercial use, no credit required).
+
+nuggets: https://images.unsplash.com/photo-1627662055487-551888db3aa8 (fried food on white ceramic plate)
+oven-wings: https://images.unsplash.com/photo-1624153064067-566cae78993d (fried chicken on white paper)
+crunchy-wings: https://images.unsplash.com/photo-1766589221324-656419e4c844 (Crispy fried chicken wings with dipping sauce)
+malai-boti-wrap: https://images.unsplash.com/photo-1676300187013-7540d4e9440d (a burrito with a side of pickles and a small bowl of ranch dressing)
+chicken-grill-wrap: https://images.unsplash.com/photo-1722239315206-95b344366a62 (Two burritos on a plate with a side of green beans)
+stuff-paratha: https://images.unsplash.com/photo-1618040996337-56904b7850b9 (sliced pizza on brown wooden table)
+zinger-paratha: https://images.unsplash.com/photo-1626242108323-cc46c98acdea (green vegetable salad on white ceramic plate)
+mighty-burger: https://images.unsplash.com/photo-1671106571674-a89083d27e60 (a sesame seed chicken sandwich with lettuce and tomato)
+malai-boti-pizza: https://images.unsplash.com/photo-1618213837799-25d5552820d3 (pizza with pepperoni and cheese)
+dynamite-sauce: public/pics/sauce.webp (restored from the site's earlier version at the owner's request; the file shows a visible stock-site watermark: "dreamstime")
+mayo-dip: public/pics/sauce.webp (restored from the site's earlier version at the owner's request; the file shows a visible stock-site watermark: "dreamstime")
+extra-ketchup: https://images.unsplash.com/photo-1582998488406-08750eeb6d7b (white ceramic mug with brown liquid)
+water.webp: supplied by the owner
+disposable-glass: https://images.unsplash.com/photo-1771611173227-b2cf4f534119 (A steaming cup of liquid on a wooden table)
+zinger-burger: https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523 (a chicken sandwich with lettuce and mayonnaise on a black background)
+small-fries: https://images.unsplash.com/photo-1767469576669-95151b13d3b5 (A white box filled with french fries)
+regular-fries: https://images.unsplash.com/photo-1585109649139-366815a0d713 (french fries on white ceramic plate)
+patty-burger: cropped from menu-source/deal_2.jpeg
+loaded-fries: cropped from menu-source/deal_4.jpeg
+alfredo-pasta: https://www.pexels.com/photo/10165859/ "Cooked Pasta With Meat on White Ceramic Plate" (photographer: Vladimír Sládek; licence: Pexels License, free for commercial use, no credit required; cropped square 800x800, white space added above and below)
+crunchy-pasta: https://www.pexels.com/photo/40262804/ "Delicious Baked Macaroni and Cheese in White Bowl" (photographer: Mohammad Fahim; licence: Pexels License, free for commercial use, no credit required; cropped square 800x800)
+cola-next: cropped from menu-source/deal_4.jpeg
