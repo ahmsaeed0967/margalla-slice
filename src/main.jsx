@@ -9,14 +9,18 @@ import "./styles/tokens.css";
 import "./styles/base.css";
 import "./styles/components.css";
 import "./styles/pages.css";
+import "./styles/checkout.css";
 import App from "./App.jsx";
 import { MenuProvider } from "./context/MenuContext.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <MenuProvider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </MenuProvider>
     </BrowserRouter>
   </StrictMode>

@@ -4,6 +4,7 @@ import { usePageTitle } from "../hooks/usePageTitle.js";
 import MenuGate from "../components/MenuGate.jsx";
 import FoodImage from "../components/FoodImage.jsx";
 import { formatRs, stockText } from "../utils/pricing.js";
+import OrderPanel from "../components/OrderPanel.jsx";
 import { MAX_PER_LINE } from "../rules/stockLimit.js";
 
 export default function ItemDetails() {
@@ -74,6 +75,8 @@ export default function ItemDetails() {
                 <li>Maximum {MAX_PER_LINE} of one item per order, and never more than what is left today.</li>
                 {item.special && <li>Special pizzas are made fresh in small batches: Medium and Large only.</li>}
               </ul>
+
+              <OrderPanel key={item.id} item={item} />
             </div>
           </article>
         )}

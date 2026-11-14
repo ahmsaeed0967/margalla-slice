@@ -1,9 +1,12 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Logo from "./Logo.jsx";
+import BasketBar from "./BasketBar.jsx";
+import { useCart } from "../context/CartContext.jsx";
 import { SITE } from "../config/site.js";
 
 // Shared frame for every page: skip link, header + navigation, <main> (the routed page), footer.
 export default function Layout() {
+  const { itemCount } = useCart();
   return (
     <>
       <a className="skip-link" href="#main">
@@ -28,6 +31,15 @@ export default function Layout() {
             <li>
               <NavLink to="/about">About</NavLink>
             </li>
+            <li>
+              <NavLink to="/basket">
+                Basket
+                <span className="badge">
+                  {itemCount}
+                  <span className="visually-hidden"> items in basket</span>
+                </span>
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </header>
@@ -35,6 +47,8 @@ export default function Layout() {
       <main id="main">
         <Outlet />
       </main>
+
+      <BasketBar />
 
       <footer className="site-footer">
         <p>

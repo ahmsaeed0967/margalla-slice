@@ -3,6 +3,9 @@ import Layout from "./components/Layout.jsx";
 import Home from "./pages/Home.jsx";
 import Menu from "./pages/Menu.jsx";
 import ItemDetails from "./pages/ItemDetails.jsx";
+import Basket from "./pages/Basket.jsx";
+import Checkout from "./pages/Checkout.jsx";
+import Confirmation from "./pages/Confirmation.jsx";
 import About from "./pages/About.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
@@ -13,6 +16,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/menu/:id" element={<ItemDetails />} />
+        <Route path="/basket" element={<Basket />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/confirmation/:orderId" element={<Confirmation />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Route>

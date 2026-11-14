@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { Clock } from "lucide-react";
 import FoodImage from "./FoodImage.jsx";
+import { useCart } from "../context/CartContext.jsx";
 import { formatRs, fromPrice, stockText } from "../utils/pricing.js";
 
 // One menu card: photo, name, description, prep time, price and availability (all as text).
 export default function ItemCard({ item }) {
+  const { qtyForItem } = useCart();
+  const inBasket = qtyForItem(item.id);
   const soldOut = item.stockToday <= 0;
   const status = stockText(item);
 
@@ -28,6 +31,7 @@ export default function ItemCard({ item }) {
           {soldOut ? "✕ " : item.stockToday <= 5 ? "! " : "✓ "}
           {status}
         </p>
+        {inBasket > 0 && <p className="card__inbasket">In basket: {inBasket}</p>}
         <Link className="btn btn--secondary" to={`/menu/${item.id}`}>
           View details<span className="visually-hidden"> for {item.name}</span>
         </Link>
